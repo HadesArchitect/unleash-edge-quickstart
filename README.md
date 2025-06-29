@@ -135,7 +135,7 @@ docker-compose kill web
 
 Your application should continue to work as usual, as Edge serves cached feature flags.
 
-<img width="591" alt="image" src="https://github.com/user-attachments/assets/8b73f6fc-0c03-4ff8-b394-8097da32c7e9" />
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/bab4db39-fb2a-42fe-865a-70f7e9e9bdee" />
 
 **You did a great job, it's done!**
 

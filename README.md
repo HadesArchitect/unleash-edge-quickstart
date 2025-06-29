@@ -94,6 +94,15 @@ edge-1  | 2025-06-29T21:06:32.828371Z DEBUG unleash_edge::http::refresher::featu
 edge-1  | 2025-06-29T21:06:51.832151Z DEBUG unleash_edge::http::refresher::feature_refresher: No update needed. Will update last check time with "537b2ba0:44"
 ```
 
+If your Edge node can't connect to the server, verify these common sources of problems. (Remember: if something is off, our [Slack community](https://www.getunleash.io/unleash-community) is glad to help!)
+
+1. **Token is added correctly** - Double-check the token format and that it matches what you copied from the UI
+2. **Edge node can reach Unleash server** - Test network connectivity:
+   ```bash
+   # Test if Edge can reach the Unleash server
+   docker run --rm --network server_default curlimages/curl:latest curl -I http://web:4242/health
+   ```
+
 ### Verify Feature Flag Sync
 
 Visit `http://localhost:3063/internal-backstage/features` in your browser. You should see a JSON response containing your feature flags, confirming Edge is successfully fetching data from Unleash.
@@ -125,6 +134,8 @@ docker-compose kill web
 ```
 
 Your application should continue to work as usual, as Edge serves cached feature flags.
+
+<img width="591" alt="image" src="https://github.com/user-attachments/assets/8b73f6fc-0c03-4ff8-b394-8097da32c7e9" />
 
 **You did a great job, it's done!**
 
